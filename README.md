@@ -1,1 +1,2 @@
 # TesteAutomatizado
+![](img/dinardinho.jpg)
