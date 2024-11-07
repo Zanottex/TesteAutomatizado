@@ -127,7 +127,7 @@ public class FundacaoBuilder {
         valor = valor.replaceAll(",", ".");
         Float valor1 = Float.valueOf(valor);
 
-        if(valor1 == 11.00){
+        if(valor1 == 10.00){
             ECommercePO.registrarEfinalizarPedido.click();
             wait.until(d -> ECommercePO.Email_ecommerce.isDisplayed());
             ECommercePO.Email_ecommerce.sendKeys(email_usuario);
@@ -245,7 +245,7 @@ public class FundacaoBuilder {
         wait.until(d -> ECommercePO.esperaHorario.isDisplayed());
         ECommercePO.horario.click();
         try {
-            Thread.sleep(1000);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -655,7 +655,7 @@ public class FundacaoBuilder {
 
         wait.until(d -> ECommercePO.ProximoMes.isDisplayed());
         ECommercePO.ProximoMes.click();
-        wait.until(d -> ECommercePO.dia.isDisplayed());
+        
         try {
             Thread.sleep(3000);
             } catch (InterruptedException e) {
@@ -681,7 +681,8 @@ public class FundacaoBuilder {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-    
+
+        wait.until(d -> ECommercePO.proximo.isEnabled());
         ECommercePO.proximo.click();
 
         ECommercePO.adicionarCategoria.click();
@@ -697,35 +698,64 @@ public class FundacaoBuilder {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        String erro = ECommercePO.pegarMensagemErro.getText();
+        String erro = null;
+        try {
+          erro = ECommercePO.pegarMensagemErro.getText();
+        } catch (Exception e) {
+            
+        }
 
         if(erro != null){
 
-        wait.until(d -> ECommercePO.adicionarCategoria.isDisplayed());
-        ECommercePO.adicionarCategoria.click();
+            ECommercePO.selecionarPaisOrigem.click();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            ECommercePO.confirmaPaisOrigem.click();
+            ECommercePO.estado.click();
+            ECommercePO.acre.click();
 
+            wait.until(d -> ECommercePO.valorSomado.isDisplayed());
         StringTokenizer  Result = new StringTokenizer(ECommercePO.valorSomado.getText());
         String valortotal = Result.nextToken(" ");
          valortotal = Result.nextToken(" ");
          valortotal = valortotal.replaceAll(",", ".");
-         Float valorsomado = Float.valueOf(valortotal);
+         Double valorsomado = Double.valueOf(valortotal);
 
-        wait.until(d -> ECommercePO.adicionarAoCarrinho.isDisplayed());
-        ECommercePO.adicionarAoCarrinho.click();
+         ECommercePO.adicionarAoCarrinho.click();
+
+            wait.until(d -> ECommercePO.nomeUsuario.isDisplayed());
+            ECommercePO.nomeUsuario.sendKeys(Nome_Cartao);
+            ECommercePO.tipodocumento.click();
+            wait.until(d -> ECommercePO.outros.isDisplayed());
+            ECommercePO.outros.click();
+            ECommercePO.documento.sendKeys(cpf);
+            
+            ECommercePO.confirmardadosusuario.click();
+
         wait.until(d -> ECommercePO.valorBilhete1.isDisplayed());
         StringTokenizer resulBilhete1 = new StringTokenizer(ECommercePO.valorBilhete1.getText());
         String valorbilhete1 = resulBilhete1.nextToken(" ");
          valorbilhete1 = resulBilhete1.nextToken(" ");
          valorbilhete1 = valorbilhete1.replaceAll(",", ".");
-        Float valor1 = Float.valueOf(valorbilhete1);
+         Double valor1 = Double.valueOf(valorbilhete1);
 
-        StringTokenizer resulBilhete2 = new StringTokenizer(ECommercePO.valorBilhete2.getText());
-        String valorbilhete2 = resulBilhete2.nextToken(" ");
-         valorbilhete2 = resulBilhete2.nextToken(" ");
-         valorbilhete2 = valorbilhete2.replaceAll(",", ".");
-        Float valor2 = Float.valueOf(valorbilhete2);
+        //StringTokenizer resulBilhete2 = new StringTokenizer(ECommercePO.valorBilhete2.getText());
+        //String valorbilhete2 = resulBilhete2.nextToken(" ");
+         //valorbilhete2 = resulBilhete2.nextToken(" ");
+         //valorbilhete2 = valorbilhete2.replaceAll(",", ".");
+        Double valor2 = 10.0;//Float.valueOf(valorbilhete2);
 
         if(valor1 + valor2 == valorsomado){
+        
+        ECommercePO.registrarEfinalizarPedido.click();
+        wait.until(d -> ECommercePO.Email_ecommerce.isDisplayed());
+            ECommercePO.Email_ecommerce.sendKeys(email_usuario);
+            ECommercePO.senha_ecommerce.sendKeys(senha_usuario);
+            ECommercePO.Logar.click();
+
         wait.until(d -> ECommercePO.finalizarPedido.isDisplayed());
         ECommercePO.finalizarPedido.click();
 

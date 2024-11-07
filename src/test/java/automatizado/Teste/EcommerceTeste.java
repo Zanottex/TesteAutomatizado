@@ -77,7 +77,6 @@ public class EcommerceTeste extends BaseTeste{
         EcommercePO = new EcommercePO(driver);
         EcommerceBuilder ecommerce = new EcommerceBuilder(EcommercePO);
 
-        ecommerce.builder_LoginEcommerce(driver);
         ecommerce.builder_VendaEcommerceVinculado(driver);
         
         

@@ -220,10 +220,9 @@ public class EcommerceBuilder {
     public void builder_VendaEcommerceVinculado(WebDriver driver){
         Wait<WebDriver> wait = new WebDriverWait(driver, 5000);
         wait.until(d -> ECommercePO.barraDePesquisa.isDisplayed());
-        ECommercePO.barraDePesquisa.sendKeys("Bilhete Vinculado 1");
+        
+        ECommercePO.barraDePesquisa.sendKeys("Bilhete vinculado 1");
         ECommercePO.bilhete_a_venda_grupo1.click();
-            
-        //Pode ser feito por meio de um while com uma variavel para quebrar o loop que só é utilizada assim que ha a confirmação de algum campo em tela
 
         try {
             Thread.sleep(2000);
