@@ -29,8 +29,5 @@ public class TermoDeAceiteTeste extends BaseTeste{
         TermoDeAceiteBuilder termo = new TermoDeAceiteBuilder(termoPO);
         
         termo.builder(driver);
-        
-       
-
     }
 }

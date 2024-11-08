@@ -35,9 +35,6 @@ public class GrupoDeBilhetesTeste extends BaseTeste{
         }
         grupo.
         builder(driver);
-
-        
-
     }
 
 }

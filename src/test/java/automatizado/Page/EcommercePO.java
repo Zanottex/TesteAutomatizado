@@ -29,8 +29,11 @@ public class EcommercePO extends BasePO{
     @FindBy(xpath = "/html/body/e-commerce/pages/toolbar-menu/div/mat-sidenav-container/mat-sidenav-content/main/dashboard/div/div/div/div[2]/productshighlights/div/div[1]/div[1]")
     public WebElement bilhete_a_venda_grupo1;
 
-    @FindBy(xpath = "/html/body/e-commerce/pages/toolbar-menu/div/mat-sidenav-container/mat-sidenav-content/main/dashboard/div/div/div[2]/div[2]/productshighlights/div/div[1]/div/a/productthumb")
+    @FindBy(xpath = "/html/body/e-commerce/pages/toolbar-menu/div/mat-sidenav-container/mat-sidenav-content/main/dashboard/div/div/div[2]/div[2]/productshighlights/div/div[1]/div/a/productthumb/div[1]")
     public WebElement bilhete_a_venda_grupo2;
+
+    @FindBy(xpath = "/html/body/e-commerce/pages/toolbar-menu/div/mat-sidenav-container/mat-sidenav-content/main/dashboard/div/div/div/div[2]/productshighlights/div/div[1]/div[1]")
+    public WebElement bilhete_a_venda_grupo3;
 
     @FindBy(xpath = "/html/body/e-commerce/pages/toolbar-menu/div/mat-sidenav-container/mat-sidenav-content/main/app-info-bilhete/div/div/div/mat-card/mat-vertical-stepper/div[1]/div/div/div/div/div[1]/section/div[2]/div/mat-calendar/div/mat-month-view/table/tbody/tr[3]/td[4]/button")
     public WebElement dia;
@@ -196,56 +199,6 @@ public class EcommercePO extends BasePO{
 
     @FindBy(xpath = "/html/body/e-commerce/pages/toolbar-menu/div/mat-sidenav-container/mat-sidenav-content/main/compraconfirmadacomponent/div/mat-card/mensagem-personalizada/div/section[2]/span/div")
     public WebElement confirmarCompra;
-
-    /*Dentro do CARD */
-    @FindBy(xpath = "/html/body/app-root/app-pages/div/div/div/ec-config/lista-cadastros-com-busca/div/div/div/search-input/mat-form-field/div[1]/div/div[2]/input")
-    public WebElement Filtro;
-    
-    @FindBy(xpath = "/html/body/app-root/app-pages/div/div/div/ec-config/lista-cadastros-com-busca/div/mat-card/div/table/tbody/tr/td[5]/button")
-    public WebElement SelecionarEcommerce;
-
-    @FindBy(xpath = "/html/body/app-root/app-pages/div/div/div/new-or-edit-ec-config/div[1]/mat-card/mat-tab-group/mat-tab-header/div/div/div/div[4]")
-    public WebElement Grupos;
-
-    @FindBy(xpath = "/html/body/app-root/app-pages/div/div/div/new-or-edit-ec-config/div[1]/mat-card/mat-tab-group/div/mat-tab-body[4]/div/div/div/div[2]/mat-accordion/mat-expansion-panel[1]")
-    public WebElement Grupo_TesteAutomatizado;
-
-    @FindBy(xpath = "/html/body/app-root/app-pages/div/div/div/new-or-edit-ec-config/div[1]/mat-card/mat-tab-group/div/mat-tab-body[4]/div/div/div/div[2]/mat-accordion/mat-expansion-panel[1]/div/div/mat-card/div/div[2]/div/button")
-    public WebElement Adicionar_Bilhete_grupo;
-
-    @FindBy(xpath  = "/html/body/div[3]/div[2]/div/mat-dialog-container/div/div/limber-select-product/div/div[1]/mat-form-field/div[1]/div/div[2]/input")
-    public WebElement Bilhete;
-
-    @FindBy(xpath = "/html/body/div[3]/div[2]/div/mat-dialog-container/div/div/limber-select-product/div/div[3]")
-    public WebElement seleciona_Bilhete;
-
-    @FindBy(xpath = "/html/body/div[3]/div[2]/div/mat-dialog-container/div/div/limber-select-product/div/div[4]/button[2]")
-    public WebElement salva_Bilhete;
-
-    @FindBy(xpath = "/html/body/app-root/app-pages/div/div/div/new-or-edit-ec-config/div[2]/buttons/div/div/button[3]")
-    public WebElement salva_Ecommerce;
-
-    @FindBy(xpath = "/html/body/app-root/app-pages/div/div/div/new-or-edit-ec-config/div[1]/mat-card/mat-tab-group/div/mat-tab-body[4]/div/div/div/div[2]/mat-accordion/mat-expansion-panel[1]/div/div/mat-card/div/div[2]/view-product[1]/mat-card/div/span")
-    public WebElement nomeBilhete1;
-
-    @FindBy(xpath = "/html/body/app-root/app-pages/div/div/div/new-or-edit-ec-config/div[1]/mat-card/mat-tab-group/div/mat-tab-body[4]/div/div/div/div[2]/mat-accordion/mat-expansion-panel[1]/div/div/mat-card/div/div[2]/view-product[2]/mat-card/div/span")
-    public WebElement nomeBilhete2;
-
-    @FindBy(xpath = "/html/body/app-root/app-pages/div/div/div/new-or-edit-ec-config/div[1]/mat-card/mat-tab-group/div/mat-tab-body[4]/div/div/div/div[2]/mat-accordion/mat-expansion-panel[1]/div/div/mat-card/div/div[2]/view-product[3]/mat-card/div/span")
-    public WebElement nomeBilhete3;
-
-    @FindBy(css = "view-product[1]")
-    public WebElement tirarBilhete1;
-
-    @FindBy(xpath = "/html/body/app-root/app-pages/div/div/div/new-or-edit-ec-config/div[1]/mat-card/mat-tab-group/div/mat-tab-body[4]/div/div/div/div[2]/mat-accordion/mat-expansion-panel[1]/div/div/mat-card/div/div[2]/view-product[2]")
-    public WebElement tirarBilhete2;
-
-    @FindBy(xpath = "/html/body/app-root/app-pages/div/div/div/new-or-edit-ec-config/div[1]/mat-card/mat-tab-group/div/mat-tab-body[4]/div/div/div/div[2]/mat-accordion/mat-expansion-panel[1]/div/div/mat-card/div/div[2]/view-product[3]")
-    public WebElement tirarBilhete3;
-
-    @FindBy(xpath = "html/body/div[3]/div/div/mat-snack-bar-container/div/div/div/div/simple-snack-bar/div[1]")
-    public WebElement spanMensagem;
-
 
     public EcommercePO(WebDriver driver) {
         super(driver);

@@ -27,11 +27,7 @@ public class ReceitaPO extends BasePO{
     @FindBy(id = "mat-option-2")
     public WebElement SelecionatipoIngresso;
 
-
     public ReceitaPO(WebDriver driver) {
         super(driver);
     }
-
-    
-
 }
